@@ -21,7 +21,7 @@ import frontChatAnime from "../animations/front.json";
 import io from "socket.io-client";
 import Lottie from 'lottie-react';
 
-const ENDPOINT = "hhttps://chatapp-0l1a.onrender.com";
+const ENDPOINT = "https://chatapp-0l1a.onrender.com";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
