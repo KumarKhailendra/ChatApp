@@ -25,7 +25,7 @@ const SportsCategory = () => {
     }
     try {
       const { data } = await axios.post(
-        "/api/sportsCategory",
+        "https://chatapp-0l1a.onrender.com/api/sportsCategory",
         {
           sportName,
           pic
