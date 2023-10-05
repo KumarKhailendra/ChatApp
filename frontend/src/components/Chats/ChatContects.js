@@ -20,7 +20,7 @@ const ChatContects = ({ fetchAgain }) => {
         },
       };
 
-      const { data } = await axios.get("/api/chat", config);
+      const { data } = await axios.get("https://chatapp-dm5h.onrender.com/api/chat", config);
       setChats(data);
     } catch (error) {
       toast({

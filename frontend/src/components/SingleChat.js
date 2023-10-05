@@ -21,7 +21,7 @@ import frontChatAnime from "../animations/front.json";
 import io from "socket.io-client";
 import Lottie from 'lottie-react';
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://chatapp-dm5h.onrender.com";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -56,7 +56,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `/api/message/${selectedChat._id}`,
+        `https://chatapp-dm5h.onrender.com/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -87,7 +87,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "/api/message",
+          "https://chatapp-dm5h.onrender.com/api/message",
           {
             content: newMessage,
             chatId: selectedChat,
