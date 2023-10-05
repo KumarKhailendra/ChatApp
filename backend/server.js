@@ -51,8 +51,8 @@ const server = app.listen(PORT, console.log(`Server running on PORT ${PORT}`));
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: process.env.URL,
-    // credentials: true,
+    origin: "https://chat-app-ten-mu-62.vercel.app",
+    credentials: true,
   },
 });
 
