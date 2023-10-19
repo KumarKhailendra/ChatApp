@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
@@ -12,7 +13,14 @@ const app = express();
 dotenv.config();
 connectDB();
 
+const corsOptions = {
+  origin: "https://chat-app-ten-mu-62.vercel.app",
+  methods: ["POST", "GET"],
+  Credentials: true,
+  optionSuccessStatus:200
+}
 app.use(express.json());
+app.use(cors(corsOptions));
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
@@ -52,7 +60,9 @@ const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
     origin: "https://chat-app-ten-mu-62.vercel.app",
+    methods: ["POST", "GET"],
     credentials: true,
+    optionSuccessStatus:200
   },
 });
 
