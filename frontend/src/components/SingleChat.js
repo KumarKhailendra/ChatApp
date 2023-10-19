@@ -56,7 +56,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `https://chatapp-0l1a.onrender.com/${selectedChat._id}`,
+        `https://chatapp-0l1a.onrender.com//api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
